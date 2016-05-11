@@ -1,2 +1,2 @@
-# Week-6-game
-AnimalTastic game
+# Week-4-game
+Crystals Collector game

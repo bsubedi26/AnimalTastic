@@ -30,6 +30,52 @@ $(document).ready(function() {
             $("#top").hide(3000);
             return false;
         })
-
+        //Clicking one of the buttons renders the gifs
+    $(document).on("click", "#animalButtons button", function() {
+            $(".animals").empty();
+            $("#top").hide(3000);
+            var choice = $(this).text();
+            console.log(choice);
+            var queryURL = "http://api.giphy.com/v1/gifs/search?q=" +
+                choice + "&api_key=dc6zaTOxFJmzC&limit=10";
+            var request = {
+                url: queryURL,
+                method: "GET"
+            }
+            $.ajax(request).done(function(response) {
+                var obj = response;
+                console.log(obj);
+                var arr = obj.data;
+                console.log(arr);
+                for (var i = 0; i < arr.length; i++) {
+                    //Images displayed still, but will play when clicked
+                    var image = $("<img>").addClass("img-thumbnail gif")
+                        .attr("src", arr[i].images.fixed_height_still.url)
+                        .attr({"width": 250, "height": 250, "data-index": [i]})
+                        .attr('data-still', arr[i].images.fixed_height_still.url)
+                        .attr('data-animate', arr[i].images.fixed_height.url)
+                        .attr('data-state', 'still');
+                    var rating = $("<p class ='rating'>").text(
+                        "Rating: " + arr[i].rating);
+                    $(".animals").append(image);
+                    $(".animals").append(rating);
+                }
+                //Ajax closer
+            });
+            //Button that renders gif closer
+        })
+        //Clicking the gif will animate it by changing the attribute to the animated link
+    $(".animals").on("click", ".gif", function() {
+            var state = $(this).attr('data-state');
+            var animate = $(this).attr('data-animate');
+            var still = $(this).attr('data-still');
+            if (state == 'still') {
+                $(this).attr('src', animate);
+                $(this).attr('data-state', 'animate');
+            } else {
+                $(this).attr('src', still);
+                $(this).attr('data-state', 'still');
+            }
+        })
 //document ready function closer
 });
