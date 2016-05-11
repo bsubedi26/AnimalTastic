@@ -36,7 +36,7 @@ $(document).ready(function() {
             $("#top").hide(3000);
             var choice = $(this).text();
             console.log(choice);
-            var queryURL = "http://api.giphy.com/v1/gifs/search?q=" +
+            var queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
                 choice + "&api_key=dc6zaTOxFJmzC&limit=10";
             var request = {
                 url: queryURL,
