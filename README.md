@@ -1,2 +1,2 @@
-# AnimalTastic
-Using the giphy api to display random gifs of animals.
+# Week-4-game
+Crystals Collector game

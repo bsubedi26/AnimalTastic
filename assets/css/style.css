@@ -1,16 +1,43 @@
 body {
 	color: black;
 	background-color: #666699;
-	background-image: url("http://www.transparenttextures.com/patterns/45-degree-fabric-light.png");
 	font-family: "Lucida Console", "Lucida Sans Typewriter", Monaco, "Bitstream Vera Sans Mono", monospace;
 }
+#top {
+	font-size: 30px;
+	font-weigt: bold;
+	text-align: center;
+	background-color: #c2c2d6;
 
+}
+#label-text {
+	font-size: 22px;
+	margin: auto;
+}
+.rating {
+	font-size: 15px;
+	font-weight: bold;
+}
+.animals {
+	display: inline-block;
+	margin: 20px;
+}
+#addAnimal {
+	font-size: 18px;
+}
+#animal-form {
+	margin: 10px;
+}
+button {
+	font-size: 18px;
+	width: 15%;
+	margin: 10px;
+}
 .numberbox {
 	background-color: #47476b;
 	padding-top: 10px;
 	padding-bottom: 10px;
 }
-
 .images {
 	padding-top: 10px;
 	padding-bottom: 10px;
@@ -23,22 +50,6 @@ body {
 #randomNumber {
 	font-size: 30px;
 }
-#title-top {
-	text-align: center;
-}
-#main {
-	margin: auto;
-	display:block;
-}
-button {
-	font-size: 22px;
-}
-#question {
-	font-size: 30px;
-}
-#time {
-	font-size: 18px;
-}
-#choices {
-	font-size: 22px;
+#addAnimal {
+	margin-bottom: 10px;
 }
